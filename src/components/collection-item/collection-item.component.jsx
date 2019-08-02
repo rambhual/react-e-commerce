@@ -1,7 +1,7 @@
 import React from "react";
 import "./collection-item.styles.scss";
 
-const CollectionItem = ({ id, name, imageUrl, price }) => (
+const CollectionItem = ({ name, imageUrl, price }) => (
   <div className="collection-item">
     <div
       className="image"
@@ -11,7 +11,7 @@ const CollectionItem = ({ id, name, imageUrl, price }) => (
     />
     <div className="collection-footer">
       <div className="name">{name}</div>
-      <div className="price">{price}</div>
+      <div className="price">${price}</div>
     </div>
   </div>
 );
