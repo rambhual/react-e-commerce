@@ -31,8 +31,9 @@ class App extends React.Component {
     this.unSubscribeFromAuth();
   }
   render() {
+    const { currentUser } = this.props;
     return (
-      <div className="App">
+      <div>
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -40,9 +41,7 @@ class App extends React.Component {
           <Route
             exact
             path="/signin"
-            render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <Signin />
-            }
+            render={() => (currentUser ? <Redirect to="/" /> : <Signin />)}
           />
           <Route exact path="/contact" component={ContactPage} />
         </Switch>
